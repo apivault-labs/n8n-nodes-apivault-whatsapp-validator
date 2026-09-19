@@ -20,6 +20,10 @@ Create an **Apify API** credential in n8n and paste your personal token from [Ap
 
 Add **WhatsApp Number Validator** to a workflow, fill the public Actor inputs below, and execute the node. Every Dataset result becomes one n8n item, so it can flow into Sheets, databases, CRMs, alerts or your own code. The node respects n8n's **Continue On Fail** behavior.
 
+## Ready-to-import workflow
+
+Import [`examples/quickstart-workflow.json`](examples/quickstart-workflow.json), select your Apify API credential in the Actor node, replace the sample business inputs and run it. The workflow returns destination-ready rows without exposing Actor internals.
+
 | Input | Type | Description |
 |---|---|---|
 | `workflow` | `string` | Choose how numbers are supplied. Auto merges both input fields and preserves existing API behavior. |
