@@ -18,7 +18,7 @@ export class WhatsappValidator implements INodeType {
 		icon: 'file:whatsappvalidator.svg',
 		group: ['transform'],
 		version: 1,
-		description: 'Validate and clean phone lists in bulk. Get E.164 format, country, carrier, line type and confirmed WhatsApp status. Unfinished checks are saved as a ready-to-run retry list and are not charged as results. $0.80 per 1,000 on paid plans.',
+		description: 'Run WhatsApp Number Validator through the hosted Apify Actor and return structured Dataset results.',
 		defaults: { name: 'WhatsApp Number Validator' },
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
