@@ -2,7 +2,7 @@
 
 An [n8n](https://n8n.io) community node for **WhatsApp Number Validator**, powered by the [`apivault_labs/whatsapp-number-validator` Apify Actor](https://apify.com/apivault_labs/whatsapp-number-validator).
 
-Validate and clean phone lists in bulk. Get E.164 format, country, carrier, line type and confirmed WhatsApp status. Unfinished checks are saved as a ready-to-run retry list and are not charged as results. $0.80 per 1,000 on paid plans.
+Run WhatsApp Number Validator through the hosted Apify Actor and return structured Dataset results.
 
 The node is a thin connector: collection, analysis, retries and billing run in the hosted Actor. It contains no private scraper implementation or embedded credentials.
 
