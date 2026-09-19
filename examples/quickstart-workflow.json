@@ -1,0 +1,94 @@
+{
+  "id": "a87fbe00-3c0e-5cc1-85a7-0b3c93d3869d",
+  "name": "WhatsApp Validator → Clean contacts",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1506f6a5-857b-5713-83a6-7fe6727bb25a",
+      "name": "When clicking Execute workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Setup\n1. Select your Apify API credential.\n2. Replace the sample number or map numbers from an earlier n8n node.\n3. The final output is normalized for a CRM or messaging workflow.",
+        "height": 260,
+        "width": 440
+      },
+      "id": "6d9f59ad-db0f-5b8d-a35e-1452884da8cb",
+      "name": "How to use this workflow",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -220
+      ]
+    },
+    {
+      "parameters": {
+        "workflow": "list",
+        "phoneNumbers": "+12025550123",
+        "defaultCountry": "US",
+        "outputPreset": "full",
+        "exportFormat": "default"
+      },
+      "id": "7bbfc78e-3034-592e-b7bb-3bfb8686378d",
+      "name": "Validate contact list with Apify",
+      "type": "n8n-nodes-apivault-whatsapp-validator.whatsappValidator",
+      "typeVersion": 1,
+      "position": [
+        260,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const j = $json; const registered = j.whatsapp === true || j.isWhatsappRegistered === true; return { json: { ...j, normalizedPhone: j.e164 ?? j.international ?? j.input ?? '', contactStatus: registered ? 'whatsapp_ready' : 'not_confirmed', crmReady: Boolean(j.isValid ?? j.valid ?? j.e164) } };"
+      },
+      "id": "7b838e4a-148a-5163-8146-a916da62ff06",
+      "name": "Prepare clean contact",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        120
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking Execute workflow": {
+      "main": [
+        [
+          {
+            "node": "Validate contact list with Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate contact list with Apify": {
+      "main": [
+        [
+          {
+            "node": "Prepare clean contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "versionId": "345424b3-ae9c-5732-8554-64cf7ab9d54a",
+  "tags": []
+}
