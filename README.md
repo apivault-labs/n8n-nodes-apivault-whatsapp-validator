@@ -46,3 +46,15 @@ The package is free. Actor runs are billed by Apify using the pricing shown on t
 ## License
 
 MIT. The hosted Actor is a separate paid service governed by Apify terms.
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run WhatsApp Number Validator — Bulk CSV Export API on Apify](https://apify.com/apivault_labs/whatsapp-number-validator).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/whatsapp-number-validator/pricing).
+- [n8n community package: n8n-nodes-apivault-whatsapp-validator](https://www.npmjs.com/package/n8n-nodes-apivault-whatsapp-validator).
+- [Python client](https://github.com/apivault-labs/whatsapp-number-validator-python).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-whatsapp-validator).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->
